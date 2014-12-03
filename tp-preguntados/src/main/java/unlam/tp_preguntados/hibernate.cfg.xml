@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url">jdbc:postgresql://127.0.0.1:5432/preguntados</property>
+		<property name="connection.username">postgres</property>
+		<property name="connection.password">postgres26</property>
+
+		<property name="connection.pool_size">1</property>
+
+		<!-- Dialecto de la base de datos -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<!-- Otras propiedades importantes -->
+		<property name="show_sql">true</property>
+		<!--property name="hbm2ddl.auto">create-drop</property-->
+
+		<!-- Archivos de mapeo -->
+		<!--<mapping resource="mapeos/pregunta.hbm.xml" /> -->
+		<mapping class="examples.preguntados.cliente.core.Usuario"/>
+		<mapping class="examples.preguntados.cliente.core.Categoria"/>
+		<mapping class="examples.preguntados.cliente.core.Pregunta"/>
+		<mapping class="examples.preguntados.cliente.core.Preguntas_vw"/>
+
+	</session-factory>
+</hibernate-configuration>
